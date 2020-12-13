@@ -1,6 +1,7 @@
 {
   "name": "react-starter",
   "version": "0.1.0",
+  "description": "a base react starter kit for project",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -34,5 +35,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhanush72/React-Starter.git"
+  },
+  "author": "Dhanush R",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhanush72/React-Starter/issues"
+  },
+  "homepage": "https://github.com/dhanush72/React-Starter#readme"
 }
