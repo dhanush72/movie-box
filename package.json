@@ -36,14 +36,10 @@
       "last 1 safari version"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dhanush72/React-Starter.git"
-  },
   "author": "Dhanush R",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dhanush72/React-Starter/issues"
-  },
-  "homepage": "https://github.com/dhanush72/React-Starter#readme"
+  "devDependencies": {
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.2.1"
+  }
 }
