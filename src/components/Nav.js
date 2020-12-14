@@ -18,10 +18,8 @@ const Nav = () => {
     <div>
       <ul>
         {links.map(({ to, text }) => (
-          <li>
-            <Link to={to} key={to}>
-              {text}
-            </Link>
+          <li key={to}>
+            <Link to={to}>{text}</Link>
           </li>
         ))}
       </ul>
