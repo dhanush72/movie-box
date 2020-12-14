@@ -1,7 +1,7 @@
 {
-  "name": "react-starter",
+  "name": "movie-box",
   "version": "0.1.0",
-  "description": "a base react starter kit for project",
+  "description": "",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -13,9 +13,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run clear && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.js",
+    "format": "prettier --write src/**/*.js",
+    "format:lint": "npm run format && npm run lint",
+    "clear": "rimraf build"
   },
   "eslintConfig": {
     "extends": [
@@ -38,7 +42,16 @@
   "author": "Dhanush R",
   "license": "ISC",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "prettier": "^2.2.1",
     "react-router-dom": "^5.2.0",
+    "rimraf": "^3.0.2",
     "styled-components": "^5.2.1"
   }
 }

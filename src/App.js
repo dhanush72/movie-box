@@ -1,7 +1,8 @@
-import "./App.css";
+import './App.css';
 
 function App() {
-  return <div className="App">React Starter Kit</div>;
+  // eslint-disable-next-line react/react-in-jsx-scope
+  return <div className="App"> Starter Kit</div>;
 }
 
 export default App;
