@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Render from '../components/Render';
 import { apiGet } from '../misc/config';
+import ShowGrid from '../components/show/ShowGrid';
+import ActorGrid from '../components/actor/ActorGrid';
 
 // eslint-disable-next-line arrow-body-style
 const Home = () => {
@@ -16,14 +18,12 @@ const Home = () => {
   const onSearch = () => {
     apiGet(`/search/${searchOptions}?q=${input}`).then(result => {
       setResults(result);
-      setInput('');
     });
   };
 
   const onKeyDown = e => {
     if (e.keyCode === 13) {
       onSearch();
-      setInput('');
     }
   };
 
@@ -32,11 +32,11 @@ const Home = () => {
       return <div>No Results</div>;
     }
     if (results && results.length > 0) {
-      return results[0].show
-        ? results.map(item => <div key={item.show.id}> {item.show.name} </div>)
-        : results.map(item => (
-            <div key={item.person.id}> {item.person.name} </div>
-          ));
+      return results[0].show ? (
+        <ShowGrid data={results} />
+      ) : (
+        <ActorGrid data={results} />
+      );
     }
     return null;
   };
