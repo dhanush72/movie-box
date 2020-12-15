@@ -1,10 +1,11 @@
 import React from 'react';
+import { StyledActorCard } from './ActorCard.style';
 
 // eslint-disable-next-line arrow-body-style
 const ActorCard = ({ id, name, country, birthday, gender, image }) => {
   return (
-    <div key={id}>
-      <div>
+    <StyledActorCard key={id}>
+      <div className="img-wrapper">
         <img src={image} alt={name} />
       </div>
 
@@ -12,8 +13,8 @@ const ActorCard = ({ id, name, country, birthday, gender, image }) => {
         {name} {gender ? `${gender}` : null}
       </h1>
       <p> {country ? `from ${country}` : null} </p>
-      <p> {birthday ? <p> {birthday} </p> : null} </p>
-    </div>
+      <p className="deathday"> {birthday ? <p> {birthday} </p> : null} </p>
+    </StyledActorCard>
   );
 };
 

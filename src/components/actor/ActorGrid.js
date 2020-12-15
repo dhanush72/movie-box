@@ -1,11 +1,12 @@
 import React from 'react';
 import ActorCard from './ActorCard';
-import NotFound from '../../images/not-found.png';
+import NotFound from '../../assets/images/not-found.png';
+import { FlexGrid } from '../styles';
 
 // eslint-disable-next-line arrow-body-style
 const ActorGrid = ({ data }) => {
   return (
-    <>
+    <FlexGrid>
       {data.map(({ person }) => (
         <ActorCard
           key={person.id}
@@ -17,7 +18,7 @@ const ActorGrid = ({ data }) => {
           image={person.image ? person.image.medium : NotFound}
         />
       ))}
-    </>
+    </FlexGrid>
   );
 };
 
