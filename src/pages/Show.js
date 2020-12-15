@@ -5,7 +5,7 @@ import ShowData from '../components/show/ShowData';
 import Details from '../components/show/Details';
 import Cast from '../components/show/Cast';
 import Seasons from '../components/show/Seasons';
-import { ShowPageWrapper, InfoBlock } from './Show.style';
+import { ShowPageWrapper, InfoBlock } from './style';
 import { useShow } from '../misc/customHooks';
 
 // eslint-disable-next-line arrow-body-style

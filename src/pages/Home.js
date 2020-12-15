@@ -4,6 +4,8 @@ import { apiGet } from '../misc/config';
 import ShowGrid from '../components/show/ShowGrid';
 import ActorGrid from '../components/actor/ActorGrid';
 import { useLastQuery } from '../misc/customHooks';
+import { SearchInput, RadioInputsWrapper, SearchButtonWrapper } from './style';
+import CustomRadio from '../misc/customRadio';
 
 // eslint-disable-next-line arrow-body-style
 const Home = () => {
@@ -48,39 +50,38 @@ const Home = () => {
 
   return (
     <Render>
-      <input
+      <SearchInput
         type="text"
         placeholder="Search...."
         onChange={onInputChange}
         onKeyDown={onKeyDown}
         value={input}
       />
-      <div>
-        <label htmlFor="show-search">
-          <input
-            type="radio"
+      <RadioInputsWrapper>
+        <div>
+          <CustomRadio
+            label="Shows"
             id="show-search"
             value="shows"
             onChange={onRadioChange}
             checked={isShowsSearch}
           />
-          Shows
-        </label>
-
-        <label htmlFor="actor-search">
-          <input
-            type="radio"
+        </div>
+        <div>
+          <CustomRadio
+            label="Actors"
             id="actor-search"
             value="people"
             onChange={onRadioChange}
             checked={!isShowsSearch}
           />
-          Actors
-        </label>
-      </div>
-      <button type="button" onClick={onSearch}>
-        Search
-      </button>
+        </div>
+      </RadioInputsWrapper>
+      <SearchButtonWrapper>
+        <button type="button" onClick={onSearch}>
+          Search
+        </button>
+      </SearchButtonWrapper>
       {renderResults()}
     </Render>
   );
