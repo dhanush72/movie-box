@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import Render from '../components/Render';
+import { apiGet } from '../misc/config';
 
 // eslint-disable-next-line arrow-body-style
 const Home = () => {
   const [input, setInput] = useState('');
+  const [results, setResults] = useState(null);
 
   const onInputChange = e => {
     setInput(e.target.value);
   };
 
   const onSearch = () => {
-    fetch(`http://api.tvmaze.com/search/shows?q=${input}`)
-      .then(data => data.json())
-      .then(result => {
-        console.log(result);
-      });
-    setInput('');
+    apiGet(`search/shows?q=${input}`).then(result => {
+      setResults(result);
+      console.log(result);
+    });
   };
 
   const onKeyDown = e => {
@@ -23,6 +23,22 @@ const Home = () => {
       onSearch();
       setInput('');
     }
+  };
+
+  const renderResults = () => {
+    if (results && results.length === 0) {
+      return <div>No Results</div>;
+    }
+    if (results && results.length > 0) {
+      return (
+        <div>
+          {results.map(item => (
+            <div key={item.show.id}> {item.show.name} </div>
+          ))}
+        </div>
+      );
+    }
+    return null;
   };
 
   return (
@@ -36,6 +52,7 @@ const Home = () => {
       <button type="button" onClick={onSearch}>
         Search
       </button>
+      {renderResults()}
     </Render>
   );
 };
