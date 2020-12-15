@@ -6,6 +6,7 @@ import ShowData from '../components/show/ShowData';
 import Details from '../components/show/Details';
 import Cast from '../components/show/Cast';
 import Seasons from '../components/show/Seasons';
+import { ShowPageWrapper, InfoBlock } from './Show.style';
 
 const initialState = {
   show: null,
@@ -63,7 +64,7 @@ const Show = () => {
   }
 
   return (
-    <>
+    <ShowPageWrapper>
       <ShowData
         image={show.image}
         name={show.name}
@@ -71,25 +72,25 @@ const Show = () => {
         summary={show.summary}
         tags={show.genres}
       />
-      <div>
+      <InfoBlock>
         <h2>Details</h2>
         <Details
           status={show.status}
           network={show.network}
           premiered={show.premiered}
         />
-      </div>
+      </InfoBlock>
 
-      <div>
+      <InfoBlock>
         <h2>Seasons</h2>
         <Seasons seasons={show._embedded.seasons} />
-      </div>
+      </InfoBlock>
 
-      <div>
+      <InfoBlock>
         <h2>Cast</h2>
         <Cast cast={show._embedded.cast} />
-      </div>
-    </>
+      </InfoBlock>
+    </ShowPageWrapper>
   );
 };
 
