@@ -28,7 +28,6 @@ function App() {
         <Route path="/show/:id">
           <Show />
         </Route>
-        <Route>404 Page</Route>
       </Switch>
     </ThemeProvider>
   );
