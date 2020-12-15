@@ -126,3 +126,10 @@ export const InfoBlock = styled.div`
     font-size: 22px;
   }
 `;
+
+// Starred
+export const StarredDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

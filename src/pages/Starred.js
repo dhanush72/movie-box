@@ -3,6 +3,7 @@ import Render from '../components/Render';
 import { useShows } from '../misc/customHooks';
 import { apiGet } from '../misc/config';
 import ShowGrid from '../components/show/ShowGrid';
+import { StarredDiv } from './style';
 
 // eslint-disable-next-line arrow-body-style
 const Starred = () => {
@@ -34,7 +35,7 @@ const Starred = () => {
     <Render>
       {isLoading && <div>shows are still loading</div>}{' '}
       {error && <div>error occured</div>}{' '}
-      {!isLoading && !shows && <div>No shows were added</div>}
+      {!isLoading && !shows && <StarredDiv>No shows were added</StarredDiv>}
       {!isLoading && !error && shows && <ShowGrid data={shows} />}
     </Render>
   );
